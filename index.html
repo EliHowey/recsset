@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>ReCSSet</title>
+        <meta name="description" content="A standard stylesheet to share across my personal projects" />
+
+        <link rel="stylesheet" href="index.css" />
+    </head>
+
+    <body>
+        <header>
+            <div>
+                <h1>ReCSSet</h1>
+                <span>A standard stylesheet to share across my personal projects</span>
+            </div>
+            <button id="theme-toggle">Toggle theme</button>
+
+            <script>
+                const themeToggle = document.getElementById('theme-toggle');
+                const currentTheme = localStorage.getItem('theme');
+
+                if (currentTheme) {
+                    document.documentElement.dataset.theme = currentTheme;
+                } else {
+                    const theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+                    document.documentElement.dataset.theme = theme;
+                    localStorage.setItem('theme', theme);
+                }
+
+                function switchTheme() {
+                    document.documentElement.classList.add('theme-switching');
+                    document.documentElement.addEventListener('transitionend', () => {
+                        document.documentElement.classList.remove('theme-switching');
+                    });
+
+                    const theme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+                    localStorage.setItem('theme', theme);
+                    document.documentElement.setAttribute('data-theme', theme);
+                }
+
+                themeToggle.addEventListener('click', switchTheme);
+            </script>
+        </header>
+
+        <main>
+            <article>
+                <h2>Typography</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, fugit. Vitae explicabo culpa
+                    repudiandae. Officiis repudiandae eius, quaerat quam eum, voluptatem iste sed dignissimos, illum vel
+                    odit? Laborum, velit libero.
+                </p>
+
+                <h3>Heading Level 3</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eaque tenetur nihil dicta nemo
+                    adipisci, perspiciatis animi porro fugiat perferendis officiis rem pariatur ex aspernatur quam in et
+                    obcaecati consectetur.
+                </p>
+
+                <h4>Heading Level 4</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, provident. Corrupti earum cumque
+                    alias eos quisquam dignissimos nulla voluptatibus, obcaecati tenetur numquam recusandae quaerat in.
+                    Distinctio vero beatae neque voluptas.
+                </p>
+
+                <h5>Heading level 5</h5>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat esse ducimus velit dolores deleniti
+                    assumenda minus! Doloremque ipsum perspiciatis earum minus, harum distinctio iure cumque, quam
+                    voluptatum reprehenderit accusamus fuga.
+                </p>
+
+                <h6>Heading level 6</h6>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse aut illo laboriosam culpa sequi
+                    provident exercitationem ullam. Dolor quam iusto blanditiis inventore saepe? Inventore rerum ratione
+                    ab sunt et quos.
+                </p>
+            </article>
+        </main>
+
+        <footer></footer>
+    </body>
+</html>
