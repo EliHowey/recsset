@@ -1,0 +1,23 @@
+// ============================================================================
+// Elements: Code Blocks
+// ============================================================================
+
+pre,
+code {
+    font-family: var(--font-stack-mono, monospace);
+    font-weight: 450; // Fira Code Retina
+}
+
+.code-block {
+    max-width: 100%;
+    overflow-inline: auto;
+    padding: 1rem;
+    border-inline-start: 0.5rem solid var(--color-accent);
+
+    background-color: var(--color-background-code);
+    color: var(--color-foreground-code);
+
+    pre {
+        margin: 0;
+    }
+}

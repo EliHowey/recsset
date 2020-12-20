@@ -47,8 +47,87 @@
         </header>
 
         <main>
+            <h2>Color</h2>
+            <button id="contrast-toggle" aria-pressed="false">Show/hide contrast</button>
+
+            <h3>Grayscale</h3>
+            <div class="flex-switcher grayscale">
+                <color-swatch color="#f3f4f6" name="Gray 100"></color-swatch>
+                <color-swatch color="#d6d7d9" name="Gray 200"></color-swatch>
+                <color-swatch color="#b9babc" name="Gray 300"></color-swatch>
+                <color-swatch color="#9b9c9e" name="Gray 400"></color-swatch>
+                <color-swatch color="#7e7f81" name="Gray 500"></color-swatch>
+                <color-swatch color="#616264" name="Gray 600"></color-swatch>
+                <color-swatch color="#444547" name="Gray 700"></color-swatch>
+                <color-swatch color="#262729" name="Gray 800"></color-swatch>
+                <color-swatch color="#090a0c" name="Gray 900"></color-swatch>
+            </div>
+
+            <h3>Accents</h3>
+            <p>Each of the following accent families were chosen to satisfy the following criteria:</p>
+            <ul>
+                <li>
+                    <strong>Base contrast:</strong> The Base variant has at least 4.5:1 contrast with either Gray 100 or
+                    Gray 900, and at least 3:1 contrast with the other. This guarantees that the Base can act as a
+                    background color without the need for a contrasting border.
+                </li>
+                <li>
+                    <strong>Extreme contrast:</strong> The Light variant has AAA contrast with Gray 900, and the Dark
+                    variant has AAA contrast with Gray 100, which ensures that the accents can work even in
+                    high-contrast settings.
+                </li>
+                <li>
+                    <strong>Paired variant contrast:</strong> The contrast <em>between</em> the Light and Dark variants
+                    is at least 4.5:1, so they can be used against each other. This allows Light variants to be used as
+                    a background on Gray 100 if Dark is used as a border, and vice versa on Gray 900.
+                </li>
+            </ul>
+
+            <p>
+                <mark>
+                    Note that these colors do not account for any forms of colorblindness.
+                    <strong>They should not be used for semantic purposes like alerts.</strong>
+                </mark>
+            </p>
+
+            <div class="flex-switcher">
+                <color-swatch color="#c1d1ec" name="Accent 1 Light"></color-swatch>
+                <color-swatch color="#2b68cd" name="Accent 1 Base"></color-swatch>
+                <color-swatch color="#1a396d" name="Accent 1 Dark"></color-swatch>
+            </div>
+            <div class="flex-switcher">
+                <color-swatch color="#edb8d0" name="Accent 2 Light"></color-swatch>
+                <color-swatch color="#db045d" name="Accent 2 Base"></color-swatch>
+                <color-swatch color="#58082a" name="Accent 2 Dark"></color-swatch>
+            </div>
+            <div class="flex-switcher">
+                <color-swatch color="#c3dcd5" name="Accent 3 Light"></color-swatch>
+                <color-swatch color="#32936f" name="Accent 3 Base"></color-swatch>
+                <color-swatch color="#1e4f3e" name="Accent 3 Dark"></color-swatch>
+            </div>
+            <div class="flex-switcher">
+                <color-swatch color="#dbc4e0" name="Accent 4 Light"></color-swatch>
+                <color-swatch color="#91349d" name="Accent 4 Base"></color-swatch>
+                <color-swatch color="#4d1f55" name="Accent 4 Dark"></color-swatch>
+            </div>
+            <div class="flex-switcher">
+                <color-swatch color="#f0dfbf" name="Accent 5 Light"></color-swatch>
+                <color-swatch color="#c37e37" name="Accent 5 Base"></color-swatch>
+                <color-swatch color="#664422" name="Accent 5 Dark"></color-swatch>
+            </div>
+
+            <p>These accent combinations should be perceivable on either Light or Dark backgrounds.</p>
+
+            <div class="flex-switcher accent-combinations">
+                <div class="accent-combination accent-1">Accent 1</div>
+                <div class="accent-combination accent-2">Accent 2</div>
+                <div class="accent-combination accent-3">Accent 3</div>
+                <div class="accent-combination accent-4">Accent 4</div>
+                <div class="accent-combination accent-5">Accent 5</div>
+            </div>
+
+            <h2>Typography</h2>
             <article>
-                <h2>Typography</h2>
                 <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, fugit. Vitae explicabo culpa
                     repudiandae. Officiis repudiandae eius, quaerat quam eum, voluptatem iste sed dignissimos, illum vel
@@ -83,8 +162,33 @@
                     ab sunt et quos.
                 </p>
             </article>
+
+            <h2>Code</h2>
+            <div class="code-block">
+                <pre><code>console.log('Hello world!');</code></pre>
+            </div>
         </main>
 
         <footer></footer>
+
+        <script type="module" src="js/color-swatch.custom-element.js"></script>
+        <script>
+            const colorSwatches = document.querySelectorAll('color-swatch');
+            const contrastToggle = document.getElementById('contrast-toggle');
+
+            let isContrastShown = false;
+
+            contrastToggle.addEventListener('click', () => {
+                isContrastShown = !isContrastShown;
+
+                if (isContrastShown) {
+                    contrastToggle.setAttribute('aria-pressed', 'true');
+                    colorSwatches.forEach((swatch) => swatch.setAttribute('contrast', ''));
+                } else {
+                    contrastToggle.setAttribute('aria-pressed', 'false');
+                    colorSwatches.forEach((swatch) => swatch.removeAttribute('contrast'));
+                }
+            });
+        </script>
     </body>
 </html>

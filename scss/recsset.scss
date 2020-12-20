@@ -9,28 +9,4 @@
 @use 'normalize';
 @use 'layout';
 
-html {
-    font-family: var(--font-stack-base);
-    line-height: 1.5;
-}
-
-body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    line-height: 1.25;
-}
-
-caption,
-figcaption,
-label,
-legend {
-    line-height: 1.375;
-}
+@use 'elements/code-blocks';

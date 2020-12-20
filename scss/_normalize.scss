@@ -17,6 +17,11 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: var(--font-stack-base);
+    line-height: 1.5;
+}
+
 /* Remove default margin on <body> */
 body {
     min-height: 100vh;
@@ -26,6 +31,22 @@ body {
 // ----------------------------------------------------------------------------
 // Typographic Elements
 // ----------------------------------------------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.25;
+}
+
+caption,
+figcaption,
+label,
+legend {
+    line-height: 1.375;
+}
 
 /*
  * 1. Solid, thin horizontal rules

@@ -2,14 +2,14 @@
     "name": "@elihowey/recsset",
     "version": "1.0.0",
     "description": "A standard stylesheet to share across my personal projects",
-    "main": "src/recsset.scss",
+    "main": "scss/recsset.scss",
     "files": [
-        "src/*",
+        "scss/*",
         "dist/*"
     ],
     "scripts": {
-        "build": "rm -rf dist/ && sass --style=compressed src:dist",
-        "dev": "sass --watch src:dist index.scss:index.css",
+        "build": "rm -rf dist/ && sass --style=compressed scss:dist",
+        "dev": "sass --watch scss:dist index.scss:index.css",
         "prepack": "npm run test && npm run build",
         "test": "prettier --check ."
     },

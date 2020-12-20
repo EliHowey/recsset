@@ -1,11 +1,73 @@
-@import 'src/recsset.scss';
+@import 'scss/recsset.scss';
 
 header {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     justify-content: space-between;
 
     h1 {
         margin: 0;
+    }
+}
+
+color-swatch {
+    min-height: 5rem; // Mitigate layout shift
+}
+
+.flex-switcher {
+    --breakpoint: 400px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+        flex: 1;
+
+        // calc() shouldn't be necessary here: https://github.com/sass/sass/issues/2860
+        min-width: clamp(0px, calc((var(--breakpoint) - 100%) * 999), 100%);
+    }
+}
+
+.grayscale {
+    --breakpoint: 900px;
+}
+
+.accent-combinations {
+    --breakpoint: 750px;
+    margin-block-start: 1rem;
+    gap: 1rem;
+
+    .accent-combination {
+        padding: 0.5rem;
+        background-color: var(--accent-bg);
+        color: var(--accent-fg);
+        border: 2px solid var(--accent-fg);
+        text-align: center;
+    }
+
+    .accent-1 {
+        --accent-bg: var(--color-accent-1-back);
+        --accent-fg: var(--color-accent-1-fore);
+    }
+
+    .accent-2 {
+        --accent-bg: var(--color-accent-2-back);
+        --accent-fg: var(--color-accent-2-fore);
+    }
+
+    .accent-3 {
+        --accent-bg: var(--color-accent-3-back);
+        --accent-fg: var(--color-accent-3-fore);
+    }
+
+    .accent-4 {
+        --accent-bg: var(--color-accent-4-back);
+        --accent-fg: var(--color-accent-4-fore);
+    }
+
+    .accent-5 {
+        --accent-bg: var(--color-accent-5-back);
+        --accent-fg: var(--color-accent-5-fore);
     }
 }

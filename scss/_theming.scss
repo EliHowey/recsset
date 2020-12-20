@@ -1,0 +1,104 @@
+// ============================================================================
+// Theming
+// ============================================================================
+
+@use 'colors';
+
+:root {
+    --font-stack-base: system, -apple-system, BlinkMacSystemFont, 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica,
+        Ubuntu, Roboto, Noto, 'Segoe UI', Arial, sans-serif;
+    --font-stack-mono: 'Fira Code VF', 'Fira Code', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
+        monospace;
+    --font-size-small: 0.875rem;
+
+    --color-background: #{colors.$gray-100};
+    --color-foreground: #{colors.$gray-900};
+
+    --color-background-code: #{colors.$gray-800};
+    --color-foreground-code: #{colors.$gray-200};
+
+    --color-accent: #{colors.$accent-1-base};
+    --color-on-accent: #{colors.$gray-100};
+
+    --color-accent-1-base: #{colors.$accent-1-base};
+    --color-accent-1-fore: #{colors.$accent-1-dark};
+    --color-accent-1-back: #{colors.$accent-1-light};
+
+    --color-accent-2-base: #{colors.$accent-2-base};
+    --color-accent-2-fore: #{colors.$accent-2-dark};
+    --color-accent-2-back: #{colors.$accent-2-light};
+
+    --color-accent-3-base: #{colors.$accent-3-base};
+    --color-accent-3-fore: #{colors.$accent-3-dark};
+    --color-accent-3-back: #{colors.$accent-3-light};
+
+    --color-accent-4-base: #{colors.$accent-4-base};
+    --color-accent-4-fore: #{colors.$accent-4-dark};
+    --color-accent-4-back: #{colors.$accent-4-light};
+
+    --color-accent-5-base: #{colors.$accent-5-base};
+    --color-accent-5-fore: #{colors.$accent-5-dark};
+    --color-accent-5-back: #{colors.$accent-5-light};
+
+    --color-label: #{colors.$gray-700};
+    --color-error: #{colors.$error};
+
+    --focus-ring-outer: #{colors.$accent-1-light};
+    --focus-ring-inner: #{colors.$accent-1-dark};
+
+    --focus-ring-error-outer: #{rgba(colors.$error, 0.25)};
+    --focus-ring-error-inner: #{colors.$error};
+}
+
+[data-theme='dark'] {
+    --color-background: #{colors.$gray-900};
+    --color-foreground: #{colors.$gray-100};
+
+    --color-accent: #{colors.$accent-2-base};
+    --color-on-accent: #{colors.$gray-100};
+
+    --color-accent-1-fore: #{colors.$accent-1-light};
+    --color-accent-1-back: #{colors.$accent-1-dark};
+
+    --color-accent-2-fore: #{colors.$accent-2-light};
+    --color-accent-2-back: #{colors.$accent-2-dark};
+
+    --color-accent-3-fore: #{colors.$accent-3-light};
+    --color-accent-3-back: #{colors.$accent-3-dark};
+
+    --color-accent-4-fore: #{colors.$accent-4-light};
+    --color-accent-4-back: #{colors.$accent-4-dark};
+
+    --color-accent-5-fore: #{colors.$accent-5-light};
+    --color-accent-5-back: #{colors.$accent-5-dark};
+
+    --color-label: #{colors.$gray-300};
+
+    --focus-ring-outer: var(--color-foreground);
+    --focus-ring-inner: var(--color-background);
+
+    // TODO: Test contrast against background
+    --focus-ring-error-outer: #{colors.$error};
+    --focus-ring-error-inner: var(--color-background);
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+}
+
+// ----------------------------------------------------------------------------
+// Theme Toggle
+//
+// When the theme is toggled, we add the `.theme-switching` class to the
+// document to force a smooth transition of all colors on the page. Once the
+// transition ends, we remove the class so it doesn't affect other page
+// transitions.
+//
+// If the user prefers not to see page-wide animations, we disable the effect.
+// ----------------------------------------------------------------------------
+
+.theme-switching * {
+    transition-property: background-color, border-color, box-shadow, color !important;
+    transition-duration: 300ms;
+}
