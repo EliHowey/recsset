@@ -1,0 +1,29 @@
+// ============================================================================
+// Elements: Tags
+// ============================================================================
+
+.tag {
+    --tag-background: var(--accent-background, var(--color-background-alt));
+    --tag-foreground: var(--accent-foreground, var(--color-foreground-alt));
+
+    display: inline-block;
+    padding: 0 0.75em;
+
+    border: 1px solid var(--tag-background);
+    border-radius: 1em;
+
+    background-color: var(--tag-background);
+    color: var(--tag-foreground);
+
+    &--alt {
+        --tag-background: var(--color-background);
+        --tag-foreground: var(--accent-base);
+
+        padding: 0 0.25em;
+        border-inline-start-width: 0.5em;
+        border-radius: 2px;
+
+        border-color: var(--tag-foreground);
+        color: var(--color-foreground);
+    }
+}

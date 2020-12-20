@@ -119,53 +119,88 @@
             <p>These accent combinations should be perceivable on either Light or Dark backgrounds.</p>
 
             <div class="flex-switcher accent-combinations">
-                <div class="accent-combination accent-1">Accent 1</div>
-                <div class="accent-combination accent-2">Accent 2</div>
-                <div class="accent-combination accent-3">Accent 3</div>
-                <div class="accent-combination accent-4">Accent 4</div>
-                <div class="accent-combination accent-5">Accent 5</div>
+                <div class="accent-1">Accent 1</div>
+                <div class="accent-2">Accent 2</div>
+                <div class="accent-3">Accent 3</div>
+                <div class="accent-4">Accent 4</div>
+                <div class="accent-5">Accent 5</div>
             </div>
 
-            <h2>Typography</h2>
             <article>
+                <h2>Typography</h2>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. At, fugit. Vitae explicabo culpa
-                    repudiandae. Officiis repudiandae eius, quaerat quam eum, voluptatem iste sed dignissimos, illum vel
-                    odit? Laborum, velit libero.
+                    ReCSSet does not change the browser's default font sizes for headings and paragraphs. It does offer
+                    ways to enhance readability, though—for example, this section sits inside an
+                    <code>&lt;article&gt;</code> tag, which restricts the content's width for readability.
                 </p>
-
-                <h3>Heading Level 3</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eaque tenetur nihil dicta nemo
-                    adipisci, perspiciatis animi porro fugiat perferendis officiis rem pariatur ex aspernatur quam in et
-                    obcaecati consectetur.
-                </p>
-
-                <h4>Heading Level 4</h4>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, provident. Corrupti earum cumque
                     alias eos quisquam dignissimos nulla voluptatibus, obcaecati tenetur numquam recusandae quaerat in.
                     Distinctio vero beatae neque voluptas.
                 </p>
 
-                <h5>Heading level 5</h5>
+                <h3>Inline Element Styles</h3>
                 <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat esse ducimus velit dolores deleniti
-                    assumenda minus! Doloremque ipsum perspiciatis earum minus, harum distinctio iure cumque, quam
-                    voluptatum reprehenderit accusamus fuga.
+                    This paragraph contains several semantic inline elements. For example, this sentence has both
+                    <em>emphasized words</em> and <strong>strong messaging.</strong>
+                    <mark
+                        >You should <em>especially</em> pay attention to this sentence, because it uses a
+                        <code>&lt;mark&gt;</code> tag.</mark
+                    >
+                    <del>This content was removed.</del> <ins>This content was inserted in its place.</ins>
                 </p>
 
-                <h6>Heading level 6</h6>
+                <h3>Quotes</h3>
+
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse aut illo laboriosam culpa sequi
-                    provident exercitationem ullam. Dolor quam iusto blanditiis inventore saepe? Inventore rerum ratione
-                    ab sunt et quos.
+                    This sentence contains a quote by <cite>George Orwell</cite>:
+                    <q>It was a bright cold day in April, and the clocks were striking thirteen.</q> What follows is a
+                    blockquote:
                 </p>
+
+                <blockquote>
+                    <p>
+                        Good design is actually a lot harder to notice than poor design, in part because good designs
+                        fit our needs so well that the design is invisible
+                    </p>
+                    <cite>― Donald A. Norman, The Design of Everyday Things</cite>
+                </blockquote>
             </article>
 
-            <h2>Code</h2>
+            <h2>Code Blocks</h2>
             <div class="code-block">
                 <pre><code>console.log('Hello world!');</code></pre>
+            </div>
+
+            <h2>Links and Buttons</h2>
+
+            <p>
+                Lorem ipsum, <a href="#">dolor sit amet consectetur adipisicing elit</a>. Corporis quasi nesciunt ipsum.
+                Minus, distinctio neque praesentium harum dicta error aut facilis rem alias. Molestias deserunt maiores
+                itaque ex eos beatae.
+            </p>
+
+            <div>
+                <button class="primary">Primary action</button>
+                <button>Secondary action</button>
+                <button class="destructive">Destructive action</button>
+            </div>
+
+            <h2>Tags (aka Chips)</h2>
+            <div>
+                <span class="tag">Default</span>
+                <span class="tag accent-1">Accent 1</span>
+                <span class="tag accent-2">Accent 2</span>
+                <span class="tag accent-3">Accent 3</span>
+                <span class="tag accent-4">Accent 4</span>
+                <span class="tag accent-5">Accent 5</span>
+
+                <span class="tag tag--alt">Alternate</span>
+                <span class="tag tag--alt accent-1">Accent 1</span>
+                <span class="tag tag--alt accent-2">Accent 2</span>
+                <span class="tag tag--alt accent-3">Accent 3</span>
+                <span class="tag tag--alt accent-4">Accent 4</span>
+                <span class="tag tag--alt accent-5">Accent 5</span>
             </div>
         </main>
 

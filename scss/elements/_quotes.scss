@@ -1,0 +1,23 @@
+// ============================================================================
+// Elements: Quotes
+// ============================================================================
+
+blockquote {
+    padding: 1rem;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    border-inline-start: 0.25rem solid var(--color-accent-primary-foreground);
+    background-color: var(--color-accent-primary-background);
+
+    > :first-child {
+        margin-block-start: 0;
+    }
+
+    cite {
+        display: block;
+        margin-block-start: 1em;
+
+        font-size: 0.75em;
+        text-align: right;
+    }
+}

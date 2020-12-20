@@ -1,0 +1,54 @@
+// ============================================================================
+// Elements: Buttons
+// ============================================================================
+
+button {
+    --button-background: inherit;
+    --button-foreground: inherit;
+    --button-border: var(--color-accent-primary-foreground);
+    --button-hover-shadow: var(--color-accent-primary-background);
+
+    padding: 0.25em 0.5em;
+    border: 2px solid var(--button-border);
+    border-radius: 4px;
+
+    background-color: var(--button-background);
+    color: var(--button-foreground);
+
+    transition: 150ms ease-out;
+    transition-property: box-shadow, transform;
+
+    // ------------------------------------------------------------------------
+    // Interactive States
+    // ------------------------------------------------------------------------
+
+    &:hover {
+        box-shadow: 3px 3px var(--button-hover-shadow);
+        transform: translate(-1px, -1px);
+    }
+
+    &:focus {
+        outline: 2px dashed var(--color-focus-ring);
+        outline-offset: 1px;
+    }
+
+    &:active {
+        box-shadow: inset 2px 2px 4px var(--color-shadow);
+        transform: none;
+    }
+
+    // ------------------------------------------------------------------------
+    // Variants
+    // ------------------------------------------------------------------------
+
+    &.primary {
+        --button-background: var(--color-accent-primary-foreground);
+        --button-foreground: var(--color-background);
+    }
+
+    &.destructive {
+        --button-foreground: var(--color-error);
+        --button-border: var(--color-error);
+        --button-hover-shadow: var(--color-shadow);
+    }
+}

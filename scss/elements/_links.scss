@@ -1,0 +1,12 @@
+// ============================================================================
+// Elements: Links
+// ============================================================================
+
+a {
+    color: var(--color-accent-primary-foreground);
+
+    &:focus {
+        outline: 2px dashed var(--color-focus-ring);
+        outline-offset: 1px;
+    }
+}

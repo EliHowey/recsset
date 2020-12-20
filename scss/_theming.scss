@@ -13,73 +13,87 @@
 
     --color-background: #{colors.$gray-100};
     --color-foreground: #{colors.$gray-900};
+    --color-background-alt: #{colors.$gray-200};
+    --color-foreground-alt: #{colors.$gray-800};
 
-    --color-background-code: #{colors.$gray-800};
-    --color-foreground-code: #{colors.$gray-200};
+    --color-separator: #{colors.$gray-600};
+    --color-shadow: #{rgba(colors.$gray-800, 0.25)};
 
-    --color-accent: #{colors.$accent-1-base};
-    --color-on-accent: #{colors.$gray-100};
+    --color-background-code: #{colors.$accent-1-light};
+    --color-foreground-code: #{colors.$accent-1-dark};
+    --color-background-code-block: #{colors.$gray-800};
+    --color-foreground-code-block: #{colors.$gray-200};
+
+    --color-accent-primary-light: #{colors.$accent-1-light};
+    --color-accent-primary-base: #{colors.$accent-1-base};
+    --color-accent-primary-dark: #{colors.$accent-1-dark};
+    --color-accent-primary-background: var(--color-accent-primary-light);
+    --color-accent-primary-foreground: var(--color-accent-primary-dark);
 
     --color-accent-1-base: #{colors.$accent-1-base};
-    --color-accent-1-fore: #{colors.$accent-1-dark};
-    --color-accent-1-back: #{colors.$accent-1-light};
+    --color-accent-1-foreground: #{colors.$accent-1-dark};
+    --color-accent-1-background: #{colors.$accent-1-light};
 
     --color-accent-2-base: #{colors.$accent-2-base};
-    --color-accent-2-fore: #{colors.$accent-2-dark};
-    --color-accent-2-back: #{colors.$accent-2-light};
+    --color-accent-2-foreground: #{colors.$accent-2-dark};
+    --color-accent-2-background: #{colors.$accent-2-light};
 
     --color-accent-3-base: #{colors.$accent-3-base};
-    --color-accent-3-fore: #{colors.$accent-3-dark};
-    --color-accent-3-back: #{colors.$accent-3-light};
+    --color-accent-3-foreground: #{colors.$accent-3-dark};
+    --color-accent-3-background: #{colors.$accent-3-light};
 
     --color-accent-4-base: #{colors.$accent-4-base};
-    --color-accent-4-fore: #{colors.$accent-4-dark};
-    --color-accent-4-back: #{colors.$accent-4-light};
+    --color-accent-4-foreground: #{colors.$accent-4-dark};
+    --color-accent-4-background: #{colors.$accent-4-light};
 
     --color-accent-5-base: #{colors.$accent-5-base};
-    --color-accent-5-fore: #{colors.$accent-5-dark};
-    --color-accent-5-back: #{colors.$accent-5-light};
+    --color-accent-5-foreground: #{colors.$accent-5-dark};
+    --color-accent-5-background: #{colors.$accent-5-light};
 
     --color-label: #{colors.$gray-700};
     --color-error: #{colors.$error};
+    --color-highlight: #f7eb8b;
 
-    --focus-ring-outer: #{colors.$accent-1-light};
-    --focus-ring-inner: #{colors.$accent-1-dark};
-
-    --focus-ring-error-outer: #{rgba(colors.$error, 0.25)};
-    --focus-ring-error-inner: #{colors.$error};
+    --color-focus-ring: var(--color-accent-2-foreground);
 }
 
 [data-theme='dark'] {
     --color-background: #{colors.$gray-900};
     --color-foreground: #{colors.$gray-100};
+    --color-background-alt: #{colors.$gray-800};
+    --color-foreground-alt: #{colors.$gray-200};
 
-    --color-accent: #{colors.$accent-2-base};
-    --color-on-accent: #{colors.$gray-100};
+    --color-separator: #{colors.$gray-400};
 
-    --color-accent-1-fore: #{colors.$accent-1-light};
-    --color-accent-1-back: #{colors.$accent-1-dark};
+    --color-background-code: #{colors.$accent-2-dark};
+    --color-foreground-code: #{colors.$accent-2-light};
 
-    --color-accent-2-fore: #{colors.$accent-2-light};
-    --color-accent-2-back: #{colors.$accent-2-dark};
+    // Dark theme uses Accent 2 as primary
+    --color-accent-primary-light: #{colors.$accent-2-light};
+    --color-accent-primary-base: #{colors.$accent-2-base};
+    --color-accent-primary-dark: #{colors.$accent-2-dark};
+    --color-accent-primary-background: var(--color-accent-primary-dark);
+    --color-accent-primary-foreground: var(--color-accent-primary-light);
 
-    --color-accent-3-fore: #{colors.$accent-3-light};
-    --color-accent-3-back: #{colors.$accent-3-dark};
+    --color-accent-1-foreground: #{colors.$accent-1-light};
+    --color-accent-1-background: #{colors.$accent-1-dark};
 
-    --color-accent-4-fore: #{colors.$accent-4-light};
-    --color-accent-4-back: #{colors.$accent-4-dark};
+    --color-accent-2-foreground: #{colors.$accent-2-light};
+    --color-accent-2-background: #{colors.$accent-2-dark};
 
-    --color-accent-5-fore: #{colors.$accent-5-light};
-    --color-accent-5-back: #{colors.$accent-5-dark};
+    --color-accent-3-foreground: #{colors.$accent-3-light};
+    --color-accent-3-background: #{colors.$accent-3-dark};
+
+    --color-accent-4-foreground: #{colors.$accent-4-light};
+    --color-accent-4-background: #{colors.$accent-4-dark};
+
+    --color-accent-5-foreground: #{colors.$accent-5-light};
+    --color-accent-5-background: #{colors.$accent-5-dark};
 
     --color-label: #{colors.$gray-300};
+    --color-error: #{colors.$error-on-dark};
 
-    --focus-ring-outer: var(--color-foreground);
-    --focus-ring-inner: var(--color-background);
-
-    // TODO: Test contrast against background
-    --focus-ring-error-outer: #{colors.$error};
-    --focus-ring-error-inner: var(--color-background);
+    --color-focus-ring: var(--color-accent-1-foreground);
 }
 
 body {
@@ -87,18 +101,16 @@ body {
     color: var(--color-foreground);
 }
 
-// ----------------------------------------------------------------------------
-// Theme Toggle
-//
-// When the theme is toggled, we add the `.theme-switching` class to the
-// document to force a smooth transition of all colors on the page. Once the
-// transition ends, we remove the class so it doesn't affect other page
-// transitions.
-//
-// If the user prefers not to see page-wide animations, we disable the effect.
-// ----------------------------------------------------------------------------
+mark {
+    background-color: var(--color-highlight);
+}
 
-.theme-switching * {
-    transition-property: background-color, border-color, box-shadow, color !important;
-    transition-duration: 300ms;
+// Rulesets can specify when to use --accent-background and --accent-foreground,
+// then elements can apply an `.accent-#` class to decide which accent is used.
+@for $accent-index from 1 to 6 {
+    .accent-#{$accent-index} {
+        --accent-base: var(--color-accent-#{$accent-index}-base);
+        --accent-background: var(--color-accent-#{$accent-index}-background);
+        --accent-foreground: var(--color-accent-#{$accent-index}-foreground);
+    }
 }

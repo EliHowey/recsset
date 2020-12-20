@@ -8,14 +8,23 @@ code {
     font-weight: 450; // Fira Code Retina
 }
 
-.code-block {
-    max-width: 100%;
-    overflow-inline: auto;
-    padding: 1rem;
-    border-inline-start: 0.5rem solid var(--color-accent);
+:not(pre) > code {
+    padding: 0 0.125em;
+    border-radius: 0.25em;
 
     background-color: var(--color-background-code);
     color: var(--color-foreground-code);
+}
+
+.code-block {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-inline: auto;
+    padding: 1rem;
+    border-inline-start: 0.5rem solid var(--color-accent-primary-base);
+
+    background-color: var(--color-background-code-block);
+    color: var(--color-foreground-code-block);
 
     pre {
         margin: 0;
